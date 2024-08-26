@@ -2,7 +2,13 @@
 layout: default
 ---
 
-<small>{{ page.date | date: "%-d %B %Y" }}</small>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<small>{{ page.date | date: "%-d %B %Y" }}
+  <span id="busuanzi_container_page_pv">
+      views: <span id="busuanzi_value_page_pv"></span>
+  </span>
+</small>
 <h1>{{ page.title }}</h1>
 
 <p class="view">by {{ page.author | default: site.author }}</p>
@@ -12,3 +18,13 @@ layout: default
 {% if page.tags %}
   <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
 {% endif %}
+
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div id="vcomments"></div>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'EDufBPvAFNdqbiy09L2fcbI9-MdYXbMMI',
+        appKey: 'ilmbfQD1yITnJ7KTirP8zFgZ'
+    })
+</script>
