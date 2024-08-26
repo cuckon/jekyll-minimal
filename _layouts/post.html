@@ -21,6 +21,7 @@ layout: default
   <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
 {% endif %}
 
+{% if page.comments %}
 <div class="comments">
   <div id="disqus_thread"></div>
   <script>
@@ -40,3 +41,4 @@ layout: default
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+{% endif %}
